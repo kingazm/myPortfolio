@@ -36,7 +36,8 @@ Widget buildWide(double deviceWidth, double deviceHeight) {
                       ),
                       Text(
                         //PLACEHOLDER DESCRIPTION
-                        "Nulla ornare, massa in porta suscipit, diam nisi accumsan risus, non molestie sapien justo id est. Cras hendrerit ex eu ex tristique elementum. Etiam posuere ex vel tortor pretium, non mattis eros bibendum. Ut eu convallis quam, sed cursus lorem. Aenean viverra massa eros, id scelerisque nisl scelerisque a.",
+                        //"Nulla ornare, massa in porta suscipit, diam nisi accumsan risus, non molestie sapien justo id est. Cras hendrerit ex eu ex tristique elementum. Etiam posuere ex vel tortor pretium, non mattis eros bibendum. Ut eu convallis quam, sed cursus lorem. Aenean viverra massa eros, id scelerisque nisl scelerisque a.",
+                        "Computer Science Student @ Jagiellonian University in Cracow. Eager to tackle new challanges regarding software engineering.",
                         style: TextStyle(
                           fontSize: 15,
                         ),
@@ -137,6 +138,9 @@ Widget buildWide(double deviceWidth, double deviceHeight) {
               ),
             ),
           ),
+          /*Container(
+            height: sectionHeight,
+          ),*/
           Container(
             padding: EdgeInsets.all(10),
             height: deviceHeight/10,

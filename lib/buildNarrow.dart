@@ -152,6 +152,9 @@ Widget buildNarrow(double deviceWidth, double deviceHeight) {
               ),
             ),
           ),
+          /*Container(
+            height: sectionHeight,
+          ),*/
           Container(
             padding: EdgeInsets.all(10),
             height: deviceHeight/10,

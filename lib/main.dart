@@ -36,7 +36,7 @@ class AdaptiveLayout extends StatelessWidget {
       ),
       body: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
-          if (constraints.maxWidth > 500) {
+          if (constraints.maxWidth > 420) {
             return buildWide(deviceWidth,
                 deviceHeight);
           } else {
@@ -47,20 +47,3 @@ class AdaptiveLayout extends StatelessWidget {
     );
   }
 }
-
-
-/*
-SingleChildScrollView(
-              child: Container(
-                height: constraints.maxHeight,
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("In progress... Turn your phone to landscape"),
-                    ],
-                  ),
-                ),
-              ),
-            );
- */
