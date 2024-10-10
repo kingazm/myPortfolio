@@ -7,7 +7,7 @@ var home = GlobalKey();
 var profile = GlobalKey();
 var projects = GlobalKey();
 
-Widget buildWide(double deviceWidth, double deviceHeight) {
+Widget buildWide(double deviceWidth, double deviceHeight, BuildContext context) {
   var sectionHeight = deviceHeight * 11 / 12;
 
   return Container(
@@ -35,9 +35,7 @@ Widget buildWide(double deviceWidth, double deviceHeight) {
                         ),
                       ),
                       Text(
-                        //PLACEHOLDER DESCRIPTION
-                        //"Nulla ornare, massa in porta suscipit, diam nisi accumsan risus, non molestie sapien justo id est. Cras hendrerit ex eu ex tristique elementum. Etiam posuere ex vel tortor pretium, non mattis eros bibendum. Ut eu convallis quam, sed cursus lorem. Aenean viverra massa eros, id scelerisque nisl scelerisque a.",
-                        "Computer Science Student @ Jagiellonian University in Cracow. Eager to tackle new challanges regarding software engineering.",
+                        "Computer Science Student @ Jagiellonian University in Cracow.\nGoogle SkillUp Alumni.\nSFI Academic IT Festival Organizer.\nSoftware Engineer eager to tackle new challanges.",
                         style: TextStyle(
                           fontSize: 15,
                         ),
@@ -47,18 +45,24 @@ Widget buildWide(double deviceWidth, double deviceHeight) {
                       ),
                       Row(
                         children: [
-                          SocialMediaButton.linkedin(
-                            url: "https://www.linkedin.com/in/kingazmuda/",
-                            size: 22,
-                            color: Colors.white,
+                          MouseRegion(
+                            cursor: SystemMouseCursors.click,
+                            child: SocialMediaButton.linkedin(
+                              url: linkedinString,
+                              size: 22,
+                              color: Colors.white,
+                            ),
                           ),
-                          SocialMediaButton.github(
-                            url: "https://github.com/kingazm",
-                            size: 22,
-                            color: Colors.white,
+                          MouseRegion(
+                            cursor: SystemMouseCursors.click,
+                            child:SocialMediaButton.github(
+                              url: githubString,
+                              size: 22,
+                              color: Colors.white,
+                            ),
                           ),
                           SizedBox(width: 10),
-                          TextButton(
+                          /*TextButton(
                             child: Text("My CV"),
                             style: ButtonStyle(
                               backgroundColor: MaterialStatePropertyAll<Color>(
@@ -67,7 +71,7 @@ Widget buildWide(double deviceWidth, double deviceHeight) {
                               MaterialStatePropertyAll<Color>(Colors.black),
                             ),
                             onPressed: myLaunchUrl,
-                          ),
+                          ),*/
                         ],
                       ),
                     ],
@@ -129,9 +133,18 @@ Widget buildWide(double deviceWidth, double deviceHeight) {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      MyBanner(Icons.question_mark, "", 4, deviceHeight, deviceWidth),
-                      MyBanner(Icons.question_mark, "", 4, deviceHeight, deviceWidth),
-                      MyBanner(Icons.question_mark, "", 4, deviceHeight, deviceWidth),
+                      InkWell(
+                        child: MyImageBanner(AssetImage('images/breathee.png'), "", 4, deviceHeight, deviceWidth),
+                        onTap: () => dialogBuilder(context, 'title', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vestibulum nulla tellus, ac congue urna dictum vitae. Sed sit amet risus fringilla, mollis quam nec, dapibus elit. Suspendisse vehicula libero in turpis ornare sodales. Proin iaculis, lorem at tristique accumsan, tortor dolor tempor nisi, vitae vestibulum sapien ipsum sed tellus. Aenean ut mi lectus. Donec id fermentum magna. Sed vitae fermentum arcu.Nam id ligula luctus, ultricies ipsum in, volutpat urna. Nulla fringilla mattis erat, vehicula porttitor nisl iaculis id. Nunc pellentesque sapien nec augue mollis posuere. Fusce laoreet dui ut malesuada pellentesque. Vestibulum molestie tincidunt efficitur. Vestibulum congue ligula a ex consequat, ac hendrerit odio mattis. Donec felis lorem, lacinia in diam nec, vehicula varius nunc. Nunc id velit lobortis urna consectetur placerat nec ac sapien. Nullam mattis lacinia mauris, vel blandit mauris dignissim nec. Sed facilisis ante libero, a dignissim libero vehicula vitae. Duis quis tortor est. Suspendisse vel ex sed turpis eleifend mattis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque pharetra nunc augue, sed accumsan erat ullamcorper et. Nulla at euismod leo. ', 'Go to project', projectOneUrlString),
+                      ),
+                      InkWell(
+                        child: MyImageBanner(AssetImage('images/breathee.png'), "", 4, deviceHeight, deviceWidth),
+                        onTap: () => dialogBuilder(context, 'title', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vestibulum nulla tellus, ac congue urna dictum vitae. Sed sit amet risus fringilla, mollis quam nec, dapibus elit. Suspendisse vehicula libero in turpis ornare sodales. Proin iaculis, lorem at tristique accumsan, tortor dolor tempor nisi, vitae vestibulum sapien ipsum sed tellus. Aenean ut mi lectus. Donec id fermentum magna. Sed vitae fermentum arcu.Nam id ligula luctus, ultricies ipsum in, volutpat urna. Nulla fringilla mattis erat, vehicula porttitor nisl iaculis id. Nunc pellentesque sapien nec augue mollis posuere. Fusce laoreet dui ut malesuada pellentesque. Vestibulum molestie tincidunt efficitur. Vestibulum congue ligula a ex consequat, ac hendrerit odio mattis. Donec felis lorem, lacinia in diam nec, vehicula varius nunc. Nunc id velit lobortis urna consectetur placerat nec ac sapien. Nullam mattis lacinia mauris, vel blandit mauris dignissim nec. Sed facilisis ante libero, a dignissim libero vehicula vitae. Duis quis tortor est. Suspendisse vel ex sed turpis eleifend mattis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque pharetra nunc augue, sed accumsan erat ullamcorper et. Nulla at euismod leo. ', 'Go to project', projectOneUrlString),
+                      ),
+                      InkWell(
+                        child: MyImageBanner(AssetImage('images/randomWiki.png'), "", 4, deviceHeight, deviceWidth),
+                        onTap: () => dialogBuilder(context, 'title', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vestibulum nulla tellus, ac congue urna dictum vitae. Sed sit amet risus fringilla, mollis quam nec, dapibus elit. Suspendisse vehicula libero in turpis ornare sodales. Proin iaculis, lorem at tristique accumsan, tortor dolor tempor nisi, vitae vestibulum sapien ipsum sed tellus. Aenean ut mi lectus. Donec id fermentum magna. Sed vitae fermentum arcu.Nam id ligula luctus, ultricies ipsum in, volutpat urna. Nulla fringilla mattis erat, vehicula porttitor nisl iaculis id. Nunc pellentesque sapien nec augue mollis posuere. Fusce laoreet dui ut malesuada pellentesque. Vestibulum molestie tincidunt efficitur. Vestibulum congue ligula a ex consequat, ac hendrerit odio mattis. Donec felis lorem, lacinia in diam nec, vehicula varius nunc. Nunc id velit lobortis urna consectetur placerat nec ac sapien. Nullam mattis lacinia mauris, vel blandit mauris dignissim nec. Sed facilisis ante libero, a dignissim libero vehicula vitae. Duis quis tortor est. Suspendisse vel ex sed turpis eleifend mattis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque pharetra nunc augue, sed accumsan erat ullamcorper et. Nulla at euismod leo. ', 'Go to project', projectOneUrlString),
+                      ),
                     ],
                   ),
                 ],
@@ -146,7 +159,7 @@ Widget buildWide(double deviceWidth, double deviceHeight) {
             height: deviceHeight/10,
             child: Center(
               child: Text(
-                "© made by yours truly",
+                "© made by Kinga Żmuda",
               ),
             ),
           ),
@@ -155,3 +168,4 @@ Widget buildWide(double deviceWidth, double deviceHeight) {
     ),
   );
 }
+

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/urlSupport.dart';
 import 'buildWide.dart';
 import 'buildNarrow.dart';
 import 'customWidgets.dart';
@@ -27,7 +28,9 @@ class AdaptiveLayout extends StatelessWidget {
   Widget build(BuildContext context) {
 
     double deviceHeight = MediaQuery.of(context).size.height;
+    globalDeviceHeight = deviceHeight;
     double deviceWidth = MediaQuery.of(context).size.width;
+    globalDeviceWidth = deviceWidth;
 
     return Scaffold(
       appBar: AppBar(
@@ -36,11 +39,11 @@ class AdaptiveLayout extends StatelessWidget {
       ),
       body: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
-          if (constraints.maxWidth > 420) {
+          if (constraints.maxWidth > 430) { //420
             return buildWide(deviceWidth,
-                deviceHeight);
+                deviceHeight, context);
           } else {
-            return buildNarrow(deviceWidth, deviceHeight);
+            return buildNarrow(deviceWidth, deviceHeight, context);
           }
         },
       ),
